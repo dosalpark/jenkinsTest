@@ -9,6 +9,6 @@ public class Controller {
 
     @GetMapping
     public String index(){
-        return "야호는무슨";
+        return "야호는무슨123123";
     }
 }
