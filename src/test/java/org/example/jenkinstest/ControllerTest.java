@@ -19,7 +19,7 @@ public class ControllerTest {
     @Test
     void test() {
         ResponseEntity<String> response = testRestTemplate.getForEntity("/", String.class);
-        System.out.println("tesad1stㅁ");
+        System.out.println("tesad1s1tㅁ");
         Assertions.assertEquals(response.getBody(), "야호는무11111111111슨123123");
     }
 }
