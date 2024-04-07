@@ -20,6 +20,11 @@ configurations {
 repositories {
     mavenCentral()
 }
+tasks.register('print') {
+    doLast {
+        println "github push plz"
+    }
+}
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
