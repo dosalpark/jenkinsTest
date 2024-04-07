@@ -22,7 +22,7 @@ public class ControllerTest {
     void test() {
         ResponseEntity<String> response = testRestTemplate.getForEntity("/", String.class);
         System.out.println(
-            "cp -r 테스트 + 폴더미리생성 + sudo + sudoers수정 + 실패시 push 되는지 테스트 + pipe 성공테1스트");
+            "cp -r 테스트 + 폴더미리생성 + sudo + sudoers수정 + 실패시 push 되는지 테스트 + pipe 성공테1스트ㅜㅜ");
         assertEquals(response.getBody(), "야호");
     }
 }
