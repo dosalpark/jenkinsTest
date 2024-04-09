@@ -13,12 +13,7 @@ env:
   ECS_TASK_DEFINITION: pop-corn-talk-service # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: pct-image-repo           # set this to the name of the container in the
-                                               # containerDefinitions section of your task definition
-
-permissions:
-  contents: read
-
-      
+                                               # containerDefinitions section of your task definition      
 jobs: # 실행 작업 코드
   merge: # merge 실행
     runs-on: ubuntu-latest
