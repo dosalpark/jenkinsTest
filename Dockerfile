@@ -2,10 +2,10 @@
 FROM openjdk:17-alpine
 
 # 작업디렉토리로 이동
-COPY ./build/libs/jenkinsTest-0.0.1-SNAPSHOT.jar /application/jenkinsTest-0.0.1-SNAPSHOT.ja
+COPY ./build/libs/jenkinsTest-0.0.1-SNAPSHOT.jar /application/jenkinsTest-0.0.1-SNAPSHOT.jar
 
 # 작업디렉토리
 WORKDIR /application/
 
 # JAR 파일 실행
-CMD ["nohup", "java", "-jar", "jenkinsTest-0.0.1-SNAPSHOT.ja"]
+CMD ["nohup", "java", "-jar", "jenkinsTest-0.0.1-SNAPSHOT.jar"]
