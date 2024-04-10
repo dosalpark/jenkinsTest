@@ -8,7 +8,7 @@ on: # 발생 이벤트 타입
 env:
   AWS_REGION: ${{ secrets.AWS_RESION}}
   ECR_REPOSITORY: pct-image-repo           # set this to your Amazon ECR repository name
-  ECS_SERVICE: service1                 # set this to your Amazon ECS service name
+  ECS_SERVICE: service                 # set this to your Amazon ECS service name
   ECS_CLUSTER: pop-corn-talk                 # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: ./pop-corn-talk-task.json # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
@@ -120,7 +120,7 @@ jobs: # 실행 작업 코드
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          task-definition: ${{ env.ECS_TASK_DEFINITION }}
           service: ${{ env.ECS_SERVICE }}
           cluster: ${{ env.ECS_CLUSTER }}
           wait-for-service-stability: true
