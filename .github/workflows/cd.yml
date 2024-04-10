@@ -124,3 +124,4 @@ jobs: # 실행 작업 코드
           service: ${{ env.ECS_SERVICE }}
           cluster: ${{ env.ECS_CLUSTER }}
           wait-for-service-stability: true
+          
