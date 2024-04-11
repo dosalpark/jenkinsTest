@@ -23,7 +23,7 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/pck-family",
+                    "awslogs-group": "/ecs/pct-family",
                     "awslogs-region": "ap-northeast-2",
                     "awslogs-stream-prefix": "ecs"
                 },
@@ -32,7 +32,7 @@
             "systemControls": []
         }
     ],
-    "family": "pck-family",
+    "family": "pct-family",
     "executionRoleArn": "arn:aws:iam::339713047224:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "revision": 1,
