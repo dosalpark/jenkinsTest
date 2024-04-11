@@ -8,9 +8,9 @@ on: # 발생 이벤트 타입
 env:
   AWS_REGION: ${{ secrets.AWS_RESION}}
   ECR_REPOSITORY: pct-image-repo           # set this to your Amazon ECR repository name
-  ECS_SERVICE: service                 # set this to your Amazon ECS service name
-  ECS_CLUSTER: pop-corn-talk                 # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: ./pop-corn-talk-service-task.json # set this to the path to your Amazon ECS task definition
+  ECS_SERVICE: pck-service                 # set this to your Amazon ECS service name
+  ECS_CLUSTER: pck-cluster                 # set this to your Amazon ECS cluster name
+  ECS_TASK_DEFINITION: ./pck-task-definition.json # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: pct-image-repo           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition      
