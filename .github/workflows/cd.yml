@@ -6,7 +6,6 @@ on: # 발생 이벤트 타입
       - main
 
 env:
-  AWS_REGION: ${{ secrets.AWS_RESION}}
   ECR_URL: 339713047224.dkr.ecr.ap-northeast-2.amazonaws.com
   ECR_REPOSITORY: pct-image-repo           # set this to your Amazon ECR repository name
   ECS_SERVICE: pct-service                 # set this to your Amazon ECS service name
@@ -113,10 +112,10 @@ jobs: # 실행 작업 코드
       - name: AWS ECR upload # Docker image upload
         id: build-image
         run: |
-          aws ecr get-login-password --region ${{ AWS_REGION }} | docker login --username AWS --password-stdin 339713047224.dkr.ecr.ap-northeast-2.amazonaws.com
-          docker tag dosal/spring:latest ${{ ECR_URL }}/${{ ECR_REPOSITORY }}:latest
-          docker push ${{ ECR_URL }}/${{ ECR_REPOSITORY }}:latest 
-          echo "image= ${{ ECR_URL }}/${{ ECR_REPOSITORY }}:latest" >> $GITHUB_OUTPUT
+          aws ecr get-login-password --region ${{ secrets.AWS_RESION}} | docker login --username AWS --password-stdin ${{ env.ECR_URL }}
+          docker tag dosal/spring:latest ${{ env.ECR_URL }}/${{ env.ECR_REPOSITORY }}:latest
+          docker push ${{ env.ECR_URL }}/${{ env.ECR_REPOSITORY }}:latest 
+          echo "image= ${{ env.ECR_URL }}/${{ env.CR_REPOSITORY }}:latest" >> $GITHUB_OUTPUT
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
