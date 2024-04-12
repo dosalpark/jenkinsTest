@@ -28,7 +28,7 @@ jobs: # 실행 작업 코드
         run: |
           git config user.name dosalpark
           git config user.email psh_a@naver.com
-          git remote set-url origin https://https://github.com/dosalpark/jenkinsTest.git
+          git remote set-url origin https://github.com/dosalpark/jenkinsTest.git
 
       - name: Merge the dev into the main and push changes # main 브랜치에 dev 브랜치를 merge, main 브랜치 push
         run: |
