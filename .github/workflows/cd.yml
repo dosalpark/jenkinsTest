@@ -115,7 +115,7 @@ jobs: # 실행 작업 코드
           aws ecr get-login-password --region ${{ secrets.AWS_RESION}} | docker login --username AWS --password-stdin ${{ env.ECR_URL }}
           docker tag dosal/spring:latest ${{ env.ECR_URL }}/${{ env.ECR_REPOSITORY }}:latest
           docker push ${{ env.ECR_URL }}/${{ env.ECR_REPOSITORY }}:latest 
-          echo "image= ${{ env.ECR_URL }}/${{ env.CR_REPOSITORY }}:latest" >> $GITHUB_OUTPUT
+          echo "image= ${{ env.ECR_URL }}/${{ env.ECR_REPOSITORY }}:latest" >> $GITHUB_OUTPUT
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
