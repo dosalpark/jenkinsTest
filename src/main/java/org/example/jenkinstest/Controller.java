@@ -10,6 +10,6 @@ public class Controller {
     @GetMapping
     public String index(){
         System.out.println("출력은되나");
-        return "야호";
+        return "야호123";
     }
 }
