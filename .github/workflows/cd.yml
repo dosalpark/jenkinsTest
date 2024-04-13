@@ -23,7 +23,7 @@ jobs: # 실행 작업 코드
         uses: actions/checkout@v4
 
       - name: Print current branch
-        run: echo "Current branch is ${{ github.ref }}"
+        run: echo "Current branch is ${{ github.head_ref }}"
 
       - name: Verity target branch
         run: |
