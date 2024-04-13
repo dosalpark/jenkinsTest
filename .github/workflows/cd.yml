@@ -14,8 +14,24 @@ env:
   CONTAINER_NAME: pct-image-repo           # set this to the name of the container in the
 
 jobs: # 실행 작업 코드
+
+  check: # dev branch Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: branch checkout
+        uses: actions/checkout@v4
+
+      - name: Verity target branch
+        run: |
+          if [ "${{ github.event.pull_request.base.ref }}" != "dev" ]; then
+            echo "dev 브랜치만 main 브랜치에 PR 가능"
+            exit 1
+          fi
+
   merge: # merge 실행
     runs-on: ubuntu-latest
+    needs: check
 
     steps:
       - name: change main branch # main 브랜치로 이동
