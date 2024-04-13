@@ -9,7 +9,7 @@ public class Controller {
 
     @GetMapping
     public String index(){
-        System.out.println("github.hand_ref 테스트");
+        System.out.println("기능브랜치에서 main브랜치로 pr 테스트 - 안되야됨");
         return "야호123";
     }
 }
