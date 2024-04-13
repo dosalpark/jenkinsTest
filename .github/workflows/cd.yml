@@ -27,7 +27,7 @@ jobs: # 실행 작업 코드
 
       - name: Verity target branch
         run: |
-          if [ "${{ github.event.pull_request.base.ref }}" != "dev" ]; then
+          if [ "${{ github.head_ref }}" != "dev" ]; then
             echo "dev 브랜치만 main 브랜치에 PR 가능"
             exit 1
           fi
