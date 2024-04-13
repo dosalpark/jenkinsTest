@@ -22,6 +22,9 @@ jobs: # 실행 작업 코드
       - name: branch checkout
         uses: actions/checkout@v4
 
+      - name: Print current branch
+        run: echo "Current branch is ${{ github.ref }}"
+
       - name: Verity target branch
         run: |
           if [ "${{ github.event.pull_request.base.ref }}" != "dev" ]; then
