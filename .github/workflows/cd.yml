@@ -53,7 +53,10 @@ jobs: # 실행 작업 코드
         run: |
           git merge origin/dev --no-edit
           git push origin main
-
+        # bot read 권한만 줘봄
+        # env:
+        #   github_token: ${{ secrets.REPO_KEY }}
+          
 #      - name: Push changes to main branch # merge 내용들을 main 브랜치로 최종 push
 #        uses: ad-m/github-push-action@master
 #        with:
