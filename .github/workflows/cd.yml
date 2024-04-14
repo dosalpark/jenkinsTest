@@ -35,7 +35,8 @@ jobs: # 실행 작업 코드
   merge: # merge 실행
     runs-on: ubuntu-latest
     needs: check
-    permissions: write
+    permissions: 
+      contents: write
 
     steps:
       - name: change main branch # main 브랜치로 이동
